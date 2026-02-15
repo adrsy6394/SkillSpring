@@ -1,7 +1,7 @@
 # SkillSpring Project Setup
 
 ## 🚀 How to Run the Project
-
+https://skill-spring-nv2s.vercel.app
 This project uses a Microfrontend architecture. You can run all applications simultaneously using the root script.
 
 ### 1️⃣ Install Dependencies (First Time Only)
