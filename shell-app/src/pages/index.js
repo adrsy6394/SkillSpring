@@ -263,7 +263,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link 
-                    href="http://localhost:3001/signup" 
+                    href="https://skill-spring-eight.vercel.app/signup" 
                     className="w-full sm:w-auto px-12 py-5 bg-white text-violet-600 rounded-2xl font-black text-xl hover:bg-slate-50 transition-all shadow-xl hover:-translate-y-1"
                   >
                     Join for Free

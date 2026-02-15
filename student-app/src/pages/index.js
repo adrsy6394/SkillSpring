@@ -57,7 +57,7 @@ export default function Home({ trendingCourses, error }) {
                  Browse All Courses
                </Link>
                <Link 
-                 href="http://localhost:3001/signup"
+                 href="https://skill-spring-eight.vercel.app/signup"
                  className="w-full sm:w-auto px-8 py-4 bg-white text-slate-900 border border-slate-200 rounded-full font-bold text-lg hover:border-violet-200 hover:bg-violet-50 transition-all flex items-center justify-center group"
                >
                  Start for Free
@@ -138,7 +138,7 @@ export default function Home({ trendingCourses, error }) {
             Join thousands of students and start learning today. Get unlimited access to all courses with our premium plan.
           </p>
           <Link 
-            href="http://localhost:3001/signup" 
+            href="https://skill-spring-eight.vercel.app/signup" 
             className="inline-block px-10 py-5 bg-white text-slate-900 rounded-full font-bold text-lg hover:bg-violet-50 transition-colors shadow-xl"
           >
             Get Started Now

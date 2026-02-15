@@ -27,7 +27,7 @@ export default function CourseCard({ course }) {
     
     if (!session) {
       alert("Please login to view course details.");
-      window.location.href = `http://localhost:3001/signup?redirect=${encodeURIComponent(window.location.href)}`;
+      window.location.href = `https://skill-spring-eight.vercel.app/signup?redirect=${encodeURIComponent(window.location.href)}`;
       return;
     }
     

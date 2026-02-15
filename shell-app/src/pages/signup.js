@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 export default function SignupRedirect() {
   useEffect(() => {
-    window.location.href = 'http://localhost:3001/signup';
+    window.location.href = 'https://skill-spring-eight.vercel.app/signup';
   }, []);
 
   return (

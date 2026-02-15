@@ -16,14 +16,14 @@ export default function LoginRedirect() {
     }
 
     // Otherwise redirect to central login portal
-    const dashboardUrl = 'http://localhost:3003/student/dashboard';
+    const dashboardUrl = 'https://skill-spring-ow1g.vercel.app/student/dashboard';
     const params = new URLSearchParams(window.location.search);
     const customRedirect = params.get('redirect');
     
     // If we have a custom redirect, use it, otherwise default to dashboard
     const finalRedirect = customRedirect || dashboardUrl;
     
-    window.location.href = `http://localhost:3001/login?redirect=${encodeURIComponent(finalRedirect)}`;
+    window.location.href = `https://skill-spring-eight.vercel.app/login?redirect=${encodeURIComponent(finalRedirect)}`;
   }, [user, loading, router]);
 
   return (

@@ -86,11 +86,11 @@ export default function Header() {
               </>
             ) : (
              <>
-               <Link href="http://localhost:3001/login" className="text-sm font-bold text-slate-600 hover:text-indigo-600 transition-colors">
+               <Link href="https://skill-spring-eight.vercel.app/login" className="text-sm font-bold text-slate-600 hover:text-indigo-600 transition-colors">
                  Log in
                </Link>
               <Link 
-                href="http://localhost:3001/signup" 
+                href="https://skill-spring-eight.vercel.app/signup" 
                 className="px-6 py-2.5 bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white rounded-full text-sm font-bold hover:shadow-lg hover:shadow-violet-200 transition-all transform active:scale-95"
               >
                 Start Learning
@@ -138,11 +138,11 @@ export default function Header() {
               </>
             ) : (
               <>
-                <Link href="http://localhost:3001/login" className="block text-base font-bold text-gray-900 border-b border-gray-50 pb-2">
+                <Link href="https://skill-spring-eight.vercel.app/login" className="block text-base font-bold text-gray-900 border-b border-gray-50 pb-2">
                   Log in
                 </Link>
                 <Link 
-                  href="http://localhost:3001/signup"
+                  href="https://skill-spring-eight.vercel.app/signup"
                   className="block w-full text-center py-4 bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white rounded-2xl font-bold shadow-lg shadow-violet-100"
                 >
                   Start Learning

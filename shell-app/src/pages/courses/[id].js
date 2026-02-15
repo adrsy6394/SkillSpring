@@ -170,7 +170,7 @@ export default function CourseDetail() {
 
   const handleEnroll = async () => {
     if (!user) {
-      window.location.href = 'http://localhost:3001/login';
+      window.location.href = 'https://skill-spring-eight.vercel.app/login';
       return;
     }
     

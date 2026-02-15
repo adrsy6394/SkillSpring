@@ -15,7 +15,7 @@ export default function AuthGuard({ children }) {
       if (!user && !isPublicRoute) {
         // Redirect to decentralized login on shell-app
         const currentUrl = window.location.href;
-        window.location.href = "http://localhost:3001/login?redirect=" + encodeURIComponent(currentUrl);
+        window.location.href = "https://skill-spring-eight.vercel.app/login?redirect=" + encodeURIComponent(currentUrl);
       }
     }
   }, [user, loading, router.pathname, isPublicRoute]);

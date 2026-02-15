@@ -99,7 +99,7 @@ export default function UserManagement() {
       setIsModalOpen(false);
       setRegData({ fullName: '', email: '', password: '' });
       fetchUsers();
-      alert('Instructor registered successfully! They can now log in at port 3002.');
+      alert('Instructor registered successfully! They can now log in at https://skill-spring-9fgn.vercel.app/instructor.');
     } catch (err) {
       setRegError(err.message);
     } finally {

@@ -25,10 +25,10 @@ npm run dev
 
 | Application          | URL                                                | Route Path    |
 | -------------------- | -------------------------------------------------- | ------------- |
-| **Shell App** (Main) | [http://localhost:3000](http://localhost:3000)     | `/`           |
-| **Admin App**        | [http://localhost:3001/admin](http://localhost:3001/admin) | `/admin`      |
-| **Instructor App**   | [http://localhost:3002/instructor](http://localhost:3002/instructor) | `/instructor` |
-| **Student App**      | [http://localhost:3003/student](http://localhost:3003/student) | `/student`    |
+| **Shell App** (Main) | [https://skill-spring-nv2s.vercel.app](https://skill-spring-nv2s.vercel.app)     | `/`           |
+| **Admin App**        | [https://skill-spring-eight.vercel.app/admin](https://skill-spring-eight.vercel.app/admin) | `/admin`      |
+| **Instructor App**   | [https://skill-spring-9fgn.vercel.app/instructor](https://skill-spring-9fgn.vercel.app/instructor) | `/instructor` |
+| **Student App**      | [https://skill-spring-ow1g.vercel.app/student](https://skill-spring-ow1g.vercel.app/student) | `/student`    |
 
 ---
 
@@ -66,12 +66,12 @@ npm run dev
 - **Global Search**: Search for courses across the entire platform.
 - **Auth Guard**: Recommends login/signup for unauthenticated users attempting to access course details.
 
-### 🔑 Admin App (Port 3001)
+### 🔑 Admin App (Production)
 - **Course Approvals**: A dedicated dashboard for admins to review pending courses.
 - **Category Management**: Add, edit, or remove course categories (e.g., Development, Design, AI).
 - **User Management**: Overview of learners and instructors.
 
-### ✍️ Instructor App (Port 3002)
+### ✍️ Instructor App (Production)
 - **Stepwise Course Builder**:
   1. **Basic Info**: Title, Description, Category, Level, Price, and Thumbnail.
   2. **Curriculum**: Add Sections and Lessons with video URLs and durations.

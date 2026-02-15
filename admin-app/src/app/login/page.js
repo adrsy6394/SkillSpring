@@ -55,11 +55,11 @@ function LoginForm() {
         let targetUrl = '/dashboard';
 
         if (role === 'student') {
-            targetUrl = 'http://localhost:3003/student/dashboard';
+            targetUrl = 'https://skill-spring-ow1g.vercel.app/student/dashboard';
         } else if (role === 'admin') {
             targetUrl = '/admin/dashboard';
         } else if (role === 'instructor') {
-            targetUrl = 'http://localhost:3002/instructor';
+            targetUrl = 'https://skill-spring-9fgn.vercel.app/instructor';
         }
 
         // Use window.location.href for certain cross-port redirects

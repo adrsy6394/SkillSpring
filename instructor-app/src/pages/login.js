@@ -2,12 +2,12 @@ import { useEffect } from 'react';
 
 export default function LoginRedirect() {
   useEffect(() => {
-    const dashboardUrl = 'http://localhost:3002/instructor';
+    const dashboardUrl = 'https://skill-spring-9fgn.vercel.app/instructor';
     const params = new URLSearchParams(window.location.search);
     const customRedirect = params.get('redirect');
     
     const finalRedirect = customRedirect || dashboardUrl;
-    window.location.href = `http://localhost:3001/login?redirect=${encodeURIComponent(finalRedirect)}`;
+    window.location.href = `https://skill-spring-eight.vercel.app/login?redirect=${encodeURIComponent(finalRedirect)}`;
   }, []);
 
   return (

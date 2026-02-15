@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 export default function LoginRedirect() {
   useEffect(() => {
     // Determine the default landing page for shell
-    const dashboardUrl = 'http://localhost:3000/';
+    const dashboardUrl = 'https://skill-spring-nv2s.vercel.app/';
     
     // Check if there is a custom redirect URL in the query string
     const params = new URLSearchParams(window.location.search);
@@ -11,7 +11,7 @@ export default function LoginRedirect() {
     
     // Redirect to the central login portal on port 3001
     const finalRedirect = customRedirect || dashboardUrl;
-    window.location.href = `http://localhost:3001/login?redirect=${encodeURIComponent(finalRedirect)}`;
+    window.location.href = `https://skill-spring-eight.vercel.app/login?redirect=${encodeURIComponent(finalRedirect)}`;
   }, []);
 
   return (

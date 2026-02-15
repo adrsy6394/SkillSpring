@@ -56,7 +56,7 @@ export async function middleware(request) {
   // Student protection & Redirect
   if (pathname.startsWith("/dashboard")) {
     if (role === "student") {
-      return NextResponse.redirect(new URL("http://localhost:3003/student/dashboard", request.url));
+      return NextResponse.redirect(new URL("https://skill-spring-ow1g.vercel.app/student/dashboard", request.url));
     }
     // If accessing dashboard but not a student
     return NextResponse.redirect(new URL("/", request.url));
