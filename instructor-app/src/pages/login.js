@@ -46,7 +46,7 @@ export default function InstructorLogin() {
           throw new Error('Access denied. This portal is for instructors only.');
         }
 
-        router.push('/instructor/dashboard');
+        router.push('/instructor');
       }
     } catch (err) {
       setError(err.message);
