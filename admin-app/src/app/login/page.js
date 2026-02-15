@@ -52,21 +52,18 @@ function LoginForm() {
             return;
         }
 
-        let targetUrl = '/dashboard';
-
         if (role === 'student') {
-            targetUrl = 'https://skill-spring-ow1g.vercel.app/student/dashboard';
-        } else if (role === 'admin') {
-            targetUrl = '/admin/dashboard';
+            setError('Students: Please login at https://skill-spring-ow1g.vercel.app/login');
+            await supabase.auth.signOut();
+            return;
         } else if (role === 'instructor') {
-            targetUrl = 'https://skill-spring-9fgn.vercel.app/instructor';
-        }
-
-        // Use window.location.href for certain cross-port redirects
-        if (targetUrl.startsWith('http')) {
-            window.location.href = targetUrl;
+            setError('Instructors: Please login at https://skill-spring-9fgn.vercel.app/login');
+            await supabase.auth.signOut();
+            return;
+        } else if (role === 'admin') {
+            router.push('/admin/dashboard');
         } else {
-            router.push(targetUrl);
+            setError('Invalid user role');
         }
       }
     } catch (err) {

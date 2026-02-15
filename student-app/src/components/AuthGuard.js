@@ -13,12 +13,11 @@ export default function AuthGuard({ children }) {
   useEffect(() => {
     if (!loading) {
       if (!user && !isPublicRoute) {
-        // Redirect to decentralized login on shell-app
-        const currentUrl = window.location.href;
-        window.location.href = "https://skill-spring-eight.vercel.app/login?redirect=" + encodeURIComponent(currentUrl);
+        // Redirect to student app login
+        router.push('/login');
       }
     }
-  }, [user, loading, router.pathname, isPublicRoute]);
+  }, [user, loading, router, isPublicRoute]);
 
   if (loading) {
     return (
