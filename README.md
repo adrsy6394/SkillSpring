@@ -1,0 +1,108 @@
+# SkillSpring Project Setup
+
+## 🚀 How to Run the Project
+
+This project uses a Microfrontend architecture. You can run all applications simultaneously using the root script.
+
+### 1️⃣ Install Dependencies (First Time Only)
+
+Run this command in the root directory:
+
+```bash
+npm install
+npm run install:all
+```
+
+### 2️⃣ Start All Applications
+
+To start the Shell, Admin, Instructor, and Student apps at once:
+
+```bash
+npm run dev
+```
+
+### 🌍 Access Points
+
+| Application          | URL                                                | Route Path    |
+| -------------------- | -------------------------------------------------- | ------------- |
+| **Shell App** (Main) | [http://localhost:3000](http://localhost:3000)     | `/`           |
+| **Admin App**        | [http://localhost:3001/admin](http://localhost:3001/admin) | `/admin`      |
+| **Instructor App**   | [http://localhost:3002/instructor](http://localhost:3002/instructor) | `/instructor` |
+| **Student App**      | [http://localhost:3003/student](http://localhost:3003/student) | `/student`    |
+
+---
+
+## 👥 User Access & Roles
+
+### 👑 Admin
+- **Email**: `pandeynihal96083@gmail.com`
+- **Access Route**: `/admin`
+- **Responsibilities**:
+  - Approve or Reject courses submitted by instructors.
+  - Manage course categories.
+  - Register and manage Instructors.
+
+### 👨‍🏫 Instructor
+- **Access Route**: `/instructor`
+- **Registration**: Instructors are registered by the Admin.
+- **Responsibilities**:
+  - Create and manage courses.
+  - Build course curriculum (Sections & Lessons).
+  - Track earnings and student enrollments.
+
+### 🎓 Student
+- **Access Route**: `/student`
+- **Responsibilities**:
+  - Browse and search for courses.
+  - Enroll in courses and track progress.
+  - Manage personal profile and learning history.
+
+---
+
+## 🏗 Microfrontend Features & Functionality
+
+### 🌐 Shell App (Port 3000)
+- **Marketplace Landing Page**: Showcases trending courses and categories.
+- **Global Search**: Search for courses across the entire platform.
+- **Auth Guard**: Recommends login/signup for unauthenticated users attempting to access course details.
+
+### 🔑 Admin App (Port 3001)
+- **Course Approvals**: A dedicated dashboard for admins to review pending courses.
+- **Category Management**: Add, edit, or remove course categories (e.g., Development, Design, AI).
+- **User Management**: Overview of learners and instructors.
+
+### ✍️ Instructor App (Port 3002)
+- **Stepwise Course Builder**:
+  1. **Basic Info**: Title, Description, Category, Level, Price, and Thumbnail.
+  2. **Curriculum**: Add Sections and Lessons with video URLs and durations.
+  3. **Review & Submit**: Final preview before sending for admin approval.
+- **Instructor Dashboard**: View performance metrics and course stats.
+
+### 📖 Student App (Port 3003)
+- **Course Exploration**: Filter courses by category, level, and price.
+- **Classroom Experience**: Video player, progress tracking, and section navigation.
+- **Profile Management**: Update user info and view enrolled courses.
+
+---
+
+## 🔄 Course Lifecycle
+
+1.  **Creation**: An **Instructor** uses the Stepwise Course Builder to create a new course.
+2.  **Submission**: Once the curriculum is ready, the instructor submits the course for review (status becomes `pending`).
+3.  **Review**: An **Admin** (logged in as `pandeynihal96083@gmail.com`) sees the pending course in the **Course Approvals** list.
+4.  **Approval/Rejection**:
+    - If **Approved**: The course status becomes `approved` and it's instantly visible in the **Shell** and **Student** marketplaces.
+    - If **Approved**: The course status becomes `approved` and it is instantly visible in the **Shell** and **Student** marketplaces.
+    - If **Rejected**: The instructor can see the status and edit the course to resubmit.
+5.  **Enrollment**: **Students** can find the approved course, enroll, and start learning immediately.
+
+---
+
+### 🛠 Manual Start (Optional)
+
+If you want to run a specific app individually:
+
+```bash
+cd shell-app && npm run dev
+# Frontends run on their own ports defined in package.json
+```

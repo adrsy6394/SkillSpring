@@ -1,0 +1,20 @@
+{
+  "name": "skillspring-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:shell\" \"npm run dev:admin\" \"npm run dev:instructor\" \"npm run dev:student\"",
+    "dev:shell": "cd shell-app && npm run dev -- -p 3000",
+    "dev:admin": "cd admin-app && npm run dev -- -p 3001",
+    "dev:instructor": "cd instructor-app && npm run dev -- -p 3002",
+    "dev:student": "cd student-app && npm run dev -- -p 3003",
+    "install:all": "npm install && cd shell-app && npm install && cd ../admin-app && npm install && cd ../instructor-app && npm install && cd ../student-app && npm install && cd ../shared-ui && npm install && cd ../shared-utils && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.95.3"
+  }
+}
