@@ -1,8 +1,62 @@
 # SkillSpring Project Setup
 
+## 🌐 Live Application URLs
+
+### Main Public App (Start Here)
+**🏠 Shell App:** https://skill-spring-nv2s.vercel.app
+- This is the main public-facing application
+- Browse courses, view details, and sign up
+- All users start here
+
+### Role-Based Portals
+
+**👨‍💼 Admin Portal:** https://skill-spring-eight.vercel.app/login
+- Manage users, courses, and platform settings
+- Approve/reject instructor courses
+- View analytics and reports
+
+**👨‍🏫 Instructor Portal:** https://skill-spring-9fgn.vercel.app/login
+- Create and manage courses
+- Track student enrollments
+- View earnings and analytics
+
+**👨‍🎓 Student Portal:** https://skill-spring-ow1g.vercel.app/login
+- Browse and enroll in courses
+- Track learning progress
+- Access enrolled courses
+
+---
+
+## 🔐 Login System Overview
+
+### How It Works
+1. **Main App (Shell):** Users visit https://skill-spring-nv2s.vercel.app to browse courses
+2. **Independent Login:** Each portal (Admin, Instructor, Student) has its own login page
+3. **Role-Based Access:** Users must login on their respective portal based on their role
+4. **No Cross-Domain Sessions:** Due to different Vercel deployments, each app maintains independent sessions
+
+### Test Credentials
+
+#### 🔑 Admin Login
+- **URL:** https://skill-spring-eight.vercel.app/login
+- **Email:** `pandeynihal96083@gmail.com`
+- **Password:** `nihal1234@@`
+- **Access:** Full platform management, user management, course approval
+
+#### 🔑 Instructor Login
+- **URL:** https://skill-spring-9fgn.vercel.app/login
+- **Email:** `adarshyadav95115@gmail.com`
+- **Password:** `adrs1234@@`
+- **Access:** Course creation, student management, earnings tracking
+
+#### 🔑 Student Login
+- **URL:** https://skill-spring-ow1g.vercel.app/login
+- **Email:** Create your own account or use existing student credentials
+- **Access:** Course enrollment, learning dashboard, progress tracking
+
+---
+
 ## 🚀 How to Run the Project
-https://skill-spring-nv2s.vercel.app
-This project uses a Microfrontend architecture. You can run all applications simultaneously using the root script.
 
 ### 1️⃣ Install Dependencies (First Time Only)
 
