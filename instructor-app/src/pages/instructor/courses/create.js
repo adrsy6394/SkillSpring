@@ -2,7 +2,7 @@ import InstructorLayout from '@/components/InstructorLayout';
 import { useAuth } from '@/context/AuthContext';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { createClient } from '@/lib/supabaseClient';
+import { supabase } from '@/lib/supabaseClient';
 import { 
   ArrowRight,
   ArrowLeft,
@@ -23,7 +23,8 @@ export default function CreateCourse() {
   const [submitting, setSubmitting] = useState(false);
   const [categories, setCategories] = useState([]);
   
-  const supabase = createClient();
+  // Use the singleton instance
+  // const supabase = createClient(); 
 
   // Form data
   const [courseData, setCourseData] = useState({
@@ -85,24 +86,47 @@ export default function CreateCourse() {
   };
 
   const handleSubmit = async () => {
+    if (!user || role !== 'instructor') {
+      alert('You must be an instructor to create a course.');
+      return;
+    }
+
     setSubmitting(true);
     try {
+      console.log('[CreateCourse] Starting submission for user:', user.id);
+      
       // 1. Create course
+      const coursePayload = {
+        title: courseData.title,
+        description: courseData.description,
+        category_id: courseData.category_id || null, // Ensure empty string becomes null
+        level: courseData.level,
+        price: courseData.price,
+        thumbnail_url: courseData.thumbnail_url,
+        instructor_id: user.id,
+        status: 'pending'
+      };
+      
+      console.log('[CreateCourse] Inserting course payload:', coursePayload);
+
       const { data: course, error: courseError } = await supabase
         .from('courses')
-        .insert([{
-          ...courseData,
-          instructor_id: user.id,
-          status: 'pending'
-        }])
+        .insert([coursePayload])
         .select()
         .single();
 
-      if (courseError) throw courseError;
+      if (courseError) {
+        console.error('[CreateCourse] Course Error:', courseError);
+        throw new Error(`Course Error: ${courseError.message}`);
+      }
+
+      console.log('[CreateCourse] Course created successfully:', course.id);
 
       // 2. Create sections and lessons
       for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
+        console.log(`[CreateCourse] Inserting section ${i + 1}:`, section.title);
+
         const { data: sectionData, error: sectionError } = await supabase
           .from('course_sections')
           .insert([{
@@ -113,10 +137,15 @@ export default function CreateCourse() {
           .select()
           .single();
 
-        if (sectionError) throw sectionError;
+        if (sectionError) {
+          console.error(`[CreateCourse] Section Error (Index ${i}):`, sectionError);
+          throw new Error(`Section Error: ${sectionError.message}`);
+        }
 
         for (let j = 0; j < section.lessons.length; j++) {
           const lesson = section.lessons[j];
+          console.log(`[CreateCourse] Inserting lesson ${j + 1} for section ${sectionData.id}`);
+
           const { error: lessonError } = await supabase
             .from('course_lessons')
             .insert([{
@@ -125,13 +154,17 @@ export default function CreateCourse() {
               order: j + 1
             }]);
 
-          if (lessonError) throw lessonError;
+          if (lessonError) {
+            console.error(`[CreateCourse] Lesson Error (Sec: ${i}, Les: ${j}):`, lessonError);
+            throw new Error(`Lesson Error: ${lessonError.message}`);
+          }
         }
       }
 
       alert('Course submitted for approval!');
       router.push('/instructor/courses');
     } catch (err) {
+      console.error('[CreateCourse] Submission failed:', err);
       alert('Error creating course: ' + err.message);
     } finally {
       setSubmitting(false);
